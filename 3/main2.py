@@ -5,7 +5,7 @@ import re
 
 file_content = None
 
-with open('./2024/3/input.txt', 'r') as file:
+with open('./input.txt', 'r') as file:
     file_content = file.read()
 
 muls = re.findall(r'mul\(\d*?,\d*?\)|do\(\)|don\'t\(\)', file_content)
