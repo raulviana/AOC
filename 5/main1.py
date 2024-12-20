@@ -5,7 +5,6 @@ def main():
     with open('input.txt', 'r') as file:
         first_part = True
         for line in file:
-            print(line, first_part, line == None)
             if len(line.strip()) == 0:
                 first_part = False
                 continue
@@ -22,8 +21,21 @@ def main():
     
 
     total = 0
-    # for update in updates:
-    #     for 
+    
+    for update in updates:
+        good = True
+        for rule in rules:
+            if rule[0] in update and rule[1] in update:           
+                if update.index(rule[0]) < update.index(rule[1]):
+                    pass
+                else:
+                    good = False
+
+        if good:
+            total += update[(len(update) // 2)]
+
+    print(f"Total: {total}")
+
 
 
 
